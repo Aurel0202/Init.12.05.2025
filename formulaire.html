@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="titre1">Mon bô titre</h1>
+  <p><a href="https://google.be" id="switch-titre">Change de titre</a></p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ipsa sint repudiandae fugit ullam id doloribus incidunt perspiciatis suscipit asperiores dignissimos veniam odio illo adipisci molestiae, ducimus cumque! Impedit, aperiam!</p>
+
+  <hr>
+
+  <form action="" id="calculatrice">
+    <label for="nb1">Nombre 1</label>
+    <input type="text" id="nb1" value="0" name="nb1">
+    <label for="nb2">Nombre 2</label>
+    <input type="number" id="nb2" value="0" name="nb2">
+    <button id="egale">Calculer</button>
+  </form>
+
+  <script defer>
+    const $myTitre1 = document.querySelector('#titre1')
+    const $switchTitre = document.querySelector('#switch-titre')
+    $switchTitre.addEventListener('click', event => {
+    //console.log($myTitre1)
+
+      event.preventDefault()
+      console.log($switchTitre.id)
+      $myTitre1.innerHTML = "New <em>texte</em>"
+    })    
+  </script>
+  FormData
+  <script>
+    const $calculatrice = document.querySelector('#calculatrice')
+    const $nb1 = document.querySelector('#nb1')
+    const $nb2 = document.querySelector('#nb2')
+    
+
+    $calculatrice.addEventListener('submit', event => {
+      event.preventDefault()
+      const data = new FormData($calculatrice)
+      const total = parseInt(data.get('nb1')) + parseFloat(data.get(nb2))
+
+      console.log(parseInt($nb1.value) + parseFloat($nb2.value) )
+    })
+  </script>
+</body>
+</html>
